@@ -52,25 +52,25 @@
             
         }
         function separador(x){
-            ant = "";
-            cont = 0;
+            abc = "";
+            conta = 0;
             
             for(i = 0 ; i < x.length ; i++){
                 if(!isNaN(x[i])){
                     
-                    ant += x[i];
+                    abc += x[i];
                     
                 }else{
-                    ant += " ";
-                    cont += 1;
+                    abc += " ";
+                    conta += 1;
                 }
             }
-            splits = ant.split(' ', cont+1);
+            lis = abc.split(' ', conta+1);
             
             
             novo = 0;
-            for(i = 0 ; i < splits.length ; i++){
-               novo = parseInt(splits[i]);
+            for(i = 0 ; i < lis.length ; i++){
+               novo = parseInt(lis[i]);
                lista.push(novo);
             }
         }
