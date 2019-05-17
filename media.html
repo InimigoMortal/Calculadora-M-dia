@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Calculadora Média</title>
+    </head>
+    <style>
+        body{
+            background-color:black;
+        }
+        div.container{
+            text-align: center; 
+            width: 407px;
+            position: absolute;
+            left: 550px;
+            height: 300px;
+            border: 1px dotted aqua;
+            background-color: greenyellow;
+         
+            
+        }
+        div.botao{
+            display: inline-block;
+            border: 1px dotted aqua;
+            
+        }
+        
+        
+    </style>
+    <script>
+        var lista = [];
+        
+        function media(x){
+            separador(document.getElementById('numero').value);
+            let total = 0;
+            for(i = 0 ; i < x.length ; i++){
+                total += parseInt(x[i]);
+            }
+            let media = total/x.length;
+
+            if(isNaN(media)){
+                media = "Adicione um número!";
+                document.getElementById("media").innerHTML = media;
+                lista = [];
+                
+            }else{
+                document.getElementById("media").innerHTML = media.toFixed(2);
+                lista = [];
+            }
+            
+
+            
+        }
+        function separador(x){
+            ant = "";
+            cont = 0;
+            
+            for(i = 0 ; i < x.length ; i++){
+                if(!isNaN(x[i])){
+                    
+                    ant += x[i];
+                    
+                }else{
+                    ant += " ";
+                    cont += 1;
+                }
+            }
+            splits = ant.split(' ', cont+1);
+            
+            
+            novo = 0;
+            for(i = 0 ; i < splits.length ; i++){
+               novo = parseInt(splits[i]);
+               lista.push(novo);
+            }
+        }
+            
+        console.log(lista);   
+         
+      
+        
+    </script>
+    <body>
+        <div class="container">
+            <h1>CALCULADORA DE MÉDIA</h1>
+            <div class="botao">
+                <input type="text" id="numero" placeholder="1,2,3,4,5">
+                <button onclick="media(lista)">Descobrir Média</button>
+                
+            </div>
+            <p><strong>Média:</strong></p>
+            <div id="media">
+                   
+            </div>
+        </div>
+        
+    </body>
+
+</html> 
